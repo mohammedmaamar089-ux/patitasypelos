@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>10 alimentos que tu perro nunca debería comer – Patitas y Pelos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FDF6EE;
+      --sand: #F0E6D3;
+      --caramel: #C8813A;
+      --brown: #7B4F2E;
+      --dark: #2C1A0E;
+      --white: #FFFFFF;
+      --gray: #8A7968;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--dark); line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--brown); text-decoration: none; }
+    .logo span { color: var(--caramel); }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--gray); transition: color .2s; }
+    nav ul a:hover { color: var(--caramel); }
+    .nav-cta { background: var(--caramel); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 50px; font-weight: 600 !important; }
+
+    /* HERO ARTÍCULO */
+    .article-hero {
+      background: linear-gradient(135deg, #3D1F0A 0%, #7B4F2E 60%, #C8813A 100%);
+      color: var(--white);
+      padding: 4rem 5%;
+      text-align: center;
+    }
+    .article-hero .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.2);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 1.2rem;
+    }
+    .article-hero p { opacity: .8; font-size: 1rem; max-width: 560px; margin: 0 auto 1.5rem; }
+    .article-meta { display: flex; justify-content: center; gap: 1.5rem; font-size: 0.85rem; opacity: .7; flex-wrap: wrap; }
+
+    /* CONTENIDO */
+    .article-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 5%;
+    }
+    .intro-box {
+      background: var(--sand);
+      border-left: 4px solid var(--caramel);
+      border-radius: 0 12px 12px 0;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      color: var(--brown);
+      font-weight: 500;
+    }
+    .article-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--brown);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-container p { color: #4A3728; font-size: 1rem; margin-bottom: 1.2rem; }
+
+    /* TARJETA ALIMENTO */
+    .food-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      border-left: 4px solid var(--caramel);
+    }
+    .food-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .food-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
+    .food-info p { font-size: 0.92rem; color: var(--gray); margin: 0; }
+    .danger-badge {
+      display: inline-block;
+      background: #FFE8E8;
+      color: #C0392B;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    /* AVISO */
+    .warning-box {
+      background: #FFF3CD;
+      border: 2px solid #F0C040;
+      border-radius: 12px;
+      padding: 1.3rem 1.5rem;
+      margin: 2rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .warning-box .warn-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .warning-box p { margin: 0; font-size: 0.95rem; color: #7A5C00; font-weight: 500; }
+
+    /* CONCLUSIÓN */
+    .conclusion {
+      background: linear-gradient(135deg, var(--brown), var(--caramel));
+      color: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .conclusion h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .conclusion p { opacity: .9; font-size: 0.95rem; }
+
+    /* ARTÍCULOS RELACIONADOS */
+    .related { margin-top: 3rem; }
+    .related h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--brown); margin-bottom: 1.2rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .related-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      text-decoration: none;
+      color: var(--dark);
+      transition: transform .2s;
+    }
+    .related-card:hover { transform: translateY(-3px); }
+    .related-card .r-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .related-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin-bottom: 0.3rem; }
+    .related-card span { font-size: 0.8rem; color: var(--caramel); font-weight: 600; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.6);
+      padding: 2rem 5%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 4rem;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); }
+    .footer-logo span { color: var(--caramel); }
+    footer p { font-size: 0.82rem; }
+
+    @media (max-width: 600px) {
+      .food-card { flex-direction: column; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="patitasypelos.html">Patitas<span>&</span>Pelos</a>
+  <ul>
+    <li><a href="#">Perros</a></li>
+    <li><a href="#">Gatos</a></li>
+    <li><a href="#">Salud</a></li>
+    <li><a href="#">Alimentación</a></li>
+    <li><a href="#" class="nav-cta">Newsletter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="article-hero">
+  <span class="tag">🐶 Alimentación · Perros</span>
+  <h1>10 alimentos que tu perro nunca debería comer</h1>
+  <p>Algunos alimentos cotidianos pueden ser muy peligrosos o incluso mortales para tu perro. ¿Los conoces todos?</p>
+  <div class="article-meta">
+    <span>📅 Junio 2026</span>
+    <span>⏱️ 8 minutos de lectura</span>
+    <span>🐾 Patitas y Pelos</span>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="article-container">
+
+  <div class="intro-box">
+    🐕 Como dueños de perros, queremos darles lo mejor. Pero a veces, sin saberlo, podemos ofrecerles alimentos que para nosotros son normales y para ellos son peligrosos. En este artículo te contamos cuáles son y por qué debes evitarlos.
+  </div>
+
+  <div class="warning-box">
+    <div class="warn-icon">⚠️</div>
+    <p>Si crees que tu perro ha ingerido alguno de estos alimentos, contacta con tu veterinario inmediatamente. No esperes a que aparezcan síntomas.</p>
+  </div>
+
+  <h2>Los 10 alimentos prohibidos para perros</h2>
+
+  <div class="food-card">
+    <div class="food-icon">🍫</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>1. Chocolate</h3>
+      <p>El chocolate contiene teobromina, una sustancia que los perros no pueden metabolizar. Puede causar vómitos, diarrea, convulsiones e incluso la muerte. Cuanto más negro es el chocolate, más peligroso resulta.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🧅</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>2. Cebolla y ajo</h3>
+      <p>Tanto crudos como cocinados, la cebolla y el ajo destruyen los glóbulos rojos del perro y pueden causar anemia hemolítica. Incluso en pequeñas cantidades repetidas son dañinos.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🍇</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>3. Uvas y pasas</h3>
+      <p>Aunque no se sabe exactamente qué sustancia las hace tóxicas, las uvas y pasas pueden causar insuficiencia renal aguda en perros. Incluso una pequeña cantidad puede ser fatal.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🥑</div>
+    <div class="food-info">
+      <span class="danger-badge">🔶 Peligroso</span>
+      <h3>4. Aguacate</h3>
+      <p>El aguacate contiene persina, una toxina que puede causar vómitos y diarrea en perros. El hueso además supone un peligro de atragantamiento.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🍬</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>5. Xilitol (chicles y dulces sin azúcar)</h3>
+      <p>El xilitol es un edulcorante presente en chicles, caramelos y algunos productos de repostería. En perros provoca una bajada repentina de azúcar en sangre y puede causar daños graves en el hígado.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🦴</div>
+    <div class="food-info">
+      <span class="danger-badge">🔶 Peligroso</span>
+      <h3>6. Huesos cocinados</h3>
+      <p>Contrario a lo que muchos creen, los huesos cocinados son peligrosos porque se astillan fácilmente y pueden perforar el estómago o el intestino del perro.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">☕</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>7. Café y té</h3>
+      <p>La cafeína es muy tóxica para los perros. Puede causar hiperactividad, temblores, convulsiones y problemas cardíacos graves. Nunca dejes tu taza de café al alcance de tu perro.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🧂</div>
+    <div class="food-info">
+      <span class="danger-badge">🔶 Peligroso</span>
+      <h3>8. Sal en exceso</h3>
+      <p>Demasiada sal puede provocar deshidratación, problemas renales y en casos extremos intoxicación por sodio. Evita darle patatas fritas, aperitivos salados o comida muy condimentada.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🍺</div>
+    <div class="food-info">
+      <span class="danger-badge">⛔ Muy peligroso</span>
+      <h3>9. Alcohol</h3>
+      <p>El alcohol afecta al perro de forma mucho más rápida e intensa que a los humanos. Puede causar vómitos, desorientación, problemas respiratorios y coma. Nunca, bajo ningún concepto.</p>
+    </div>
+  </div>
+
+  <div class="food-card">
+    <div class="food-icon">🌰</div>
+    <div class="food-info">
+      <span class="danger-badge">🔶 Peligroso</span>
+      <h3>10. Nueces de macadamia</h3>
+      <p>Estas nueces pueden causar debilidad muscular, temblores, fiebre y vómitos en perros. Los síntomas aparecen entre las 12 y 24 horas tras la ingestión.</p>
+    </div>
+  </div>
+
+  <h2>¿Qué hacer si mi perro ha comido algo prohibido?</h2>
+  <p>Lo primero es mantener la calma. Si sabes qué ha comido y en qué cantidad, llama inmediatamente a tu veterinario y cuéntale exactamente lo que ocurrió. No intentes provocar el vómito sin indicación médica, ya que en algunos casos puede empeorar la situación.</p>
+  <p>Ten siempre a mano el número de tu veterinario de confianza y el de una clínica veterinaria de urgencias cerca de tu domicilio en Cartagena o Murcia.</p>
+
+  <h2>¿Qué alimentos sí puede comer mi perro?</h2>
+  <p>Tranquilo, hay muchos alimentos saludables que puedes compartir con tu perro: zanahoria, manzana sin semillas, arroz cocido, pollo hervido sin huesos, calabaza o arándanos. ¡Son opciones seguras y nutritivas!</p>
+
+  <div class="conclusion">
+    <h2>🐾 Conclusión</h2>
+    <p>Conocer qué alimentos son peligrosos para tu perro es uno de los mejores regalos que puedes hacerle. Con esta información estarás mejor preparado para proteger su salud y bienestar. Recuerda: cuando tengas dudas sobre la alimentación de tu mascota, consulta siempre con tu veterinario.</p>
+  </div>
+
+  <!-- ARTÍCULOS RELACIONADOS -->
+  <div class="related">
+    <h2>Artículos relacionados</h2>
+    <div class="related-grid">
+      <a class="related-card" href="#">
+        <div class="r-icon">🏥</div>
+        <h4>Señales de que tu perro está enfermo</h4>
+        <span>Leer artículo →</span>
+      </a>
+      <a class="related-card" href="#">
+        <div class="r-icon">🍗</div>
+        <h4>¿Pienso o comida natural? Guía completa</h4>
+        <span>Leer artículo →</span>
+      </a>
+      <a class="related-card" href="#">
+        <div class="r-icon">✂️</div>
+        <h4>Cómo cortar las uñas de tu perro en casa</h4>
+        <span>Leer artículo →</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Patitas<span>&</span>Pelos</div>
+  <p>© 2026 PatitasYPelos · Hecho con 🐾 desde España</p>
+</footer>
+
+</body>
+</html>
